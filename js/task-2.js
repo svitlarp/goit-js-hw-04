@@ -1,24 +1,17 @@
-// Helper function
-function sum(arr) {
-  let sum = 0;
-  for (let i of arr) {
-    sum += i;
-  }
-  return sum;
-}
-
 // Function to calculate average of consumed calories
 function calcAverageCalories(days) {
-    const totalCalories = [];
+    let totalCalories = 0;
     if (days.length > 0) {
         for (let i of days) {
-            totalCalories.push(i.calories);
+            totalCalories += i.calories;
         }
-        const avgCalories = sum(totalCalories) / Object.keys(days).length;
+        
+        const avgCalories = totalCalories / days.length;
         return avgCalories;
     }
     return days.length;
 }
+
 
 console.log(
   calcAverageCalories([
